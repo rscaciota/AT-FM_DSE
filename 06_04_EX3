@@ -1,0 +1,71 @@
+/******************************************************************************
+Faça um programa que receba dois números. Calcule e mostre:
+- a soma dos números pares desse intervalo de números, incluindo os
+números digitados;
+- a multiplicação dos números ímpares desse intervalo, incluindo os
+digitados;
+*******************************************************************************/
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main(){
+    
+    int n1, n2, i, resto;
+    int pares = 0;
+    int impar = 1;
+    //pedir pra ele digitar dois números
+    printf("Escreva dois números:\n");
+    scanf("%d %d", &n1, &n2);
+
+    //n1<n2
+    //n1>n2
+    if(n1<n2){
+        i = n1; 
+        //n1 = 5
+        while(i<=n2){  
+            //n2 = 9
+            resto = i%2; 
+            //5%2 - 6%2 - 7%2 - 8%2 - 9%2
+            if(resto==0){
+                //terei somente números pares
+                //entao farei a soma deles
+                //pares = 0+6 
+                //pares = 6+8 = 14
+                pares = pares+i;
+            }else{
+                //terei somente números impares
+                // impar = 1*5 = 5
+                // impar = 5*7 = 35
+                // impar = 35*9 = 315
+                impar = impar*i;
+            }
+        }
+    }else{
+        //aqui temos que n2 é maior que n1
+        i = n2;
+        //n2 = 2
+        for(i;i<=n1;i++){
+            //n1 = 6
+            resto = i%2;
+            //2%2 - 3%2 - 4%2 - 5%2 - 6%2
+            
+            if(resto==0){
+                //números pares
+                pares = pares+1;
+                //pares = 2+1 = 3
+                //pares = 3+4 = 7
+                //pares = 7+6 = 13
+            }else{
+                //numeros ímpares
+                impar = impar*1;
+                //impar = 3*1 = 3
+                //impar = 3*5 = 15
+            }
+        }
+    }
+    
+    printf("A soma dos números pares é: %d\n", pares);
+    printf("A multiplicaçao dos númes ímpares é: %d\n", impar);
+}
+
