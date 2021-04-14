@@ -45,7 +45,7 @@ int main(){
         printf("Este número é positivo.\n");
         //calculei o quadrado e a raiz do número
         quadrado = num*num;
-        raiz = sqrt(num); 
+        raiz = sqrt(num); //sqrt = funçao para determinar a raiz quadrada de um número
         //apresentar o resultado ao usuário
         printf("O quadrado de %f é: %f\n", num, quadrado);
         printf("A raiz de %f é: %f\n", num, raiz);
